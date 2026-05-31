@@ -145,16 +145,12 @@ function applyScope(pi: ExtensionAPI, ctx: ExtensionContext, config: ToolScopeCo
   }
 }
 
-function scheduleApply(pi: ExtensionAPI, ctx: ExtensionContext, getConfig: () => ToolScopeConfig) {
-  setTimeout(() => applyScope(pi, ctx, getConfig()), 0);
-}
-
 export default function providerToolScope(pi: ExtensionAPI) {
   let config: ToolScopeConfig = DEFAULT_CONFIG;
 
   pi.on("session_start", async (_event, ctx) => {
     config = loadConfig(ctx.cwd);
-    scheduleApply(pi, ctx, () => config);
+    applyScope(pi, ctx, config);
   });
 
   pi.on("model_select", async (event, ctx) => {
