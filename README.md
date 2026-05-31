@@ -13,20 +13,9 @@ This package scopes these tools to the `ollama-cloud` provider:
 
 With non-Ollama models, they are removed from active tools. With Ollama Cloud models, they are added back if registered.
 
-## pi package vs npm package
+## pi package note
 
-A pi package is something pi loads from `~/.pi/agent/settings.json` under `packages`.
-
-```json
-{
-  "packages": [
-    "npm:pi-ollama-cloud",
-    "git:github.com/tanabe1478/pi-provider-tool-scope"
-  ]
-}
-```
-
-The source can be npm, git, or a local path. npm is only one distribution mechanism; the package becomes active in pi because `pi install` registers it in settings.
+This package controls tools registered by other pi packages. For example, `pi-ollama-cloud` is installed as a pi package via `pi install npm:pi-ollama-cloud`, and that is what makes its web tools visible to pi.
 
 ## Install
 
