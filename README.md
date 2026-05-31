@@ -2,7 +2,7 @@
 
 Scope pi tools to specific providers or models.
 
-Use this when a pi package exposes tools that only make sense for one provider. For example, `pi-ollama-cloud` is an npm package, but when installed with `pi install npm:pi-ollama-cloud`, it is also a pi package: pi loads its extension and registers Ollama-specific web tools. Those tools should be available with Ollama Cloud models, but not while using OpenAI Codex or Claude.
+Use this when a pi package exposes tools you only want certain models to use. For example, `pi-ollama-cloud` is an npm package, but when installed with `pi install npm:pi-ollama-cloud`, it is also a pi package: pi loads its extension and registers Ollama Cloud web tools. Those tools can work from any provider if the API key is configured, but you may still want to hide them from OpenAI Codex or Claude to avoid accidental calls.
 
 ## Default behavior
 
