@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# build / coverage
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# local secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# credentials / keys
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+
+# local files
+.DS_Store

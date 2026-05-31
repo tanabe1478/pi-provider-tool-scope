@@ -1,0 +1,36 @@
+{
+  "name": "pi-provider-tool-scope",
+  "version": "0.1.0",
+  "description": "Scope pi tools to specific providers or models to prevent accidental tool exposure.",
+  "type": "module",
+  "keywords": [
+    "pi-package",
+    "pi",
+    "tool-scope",
+    "provider-tools"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanabe1478/pi-provider-tool-scope.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tanabe1478/pi-provider-tool-scope/issues"
+  },
+  "homepage": "https://github.com/tanabe1478/pi-provider-tool-scope#readme",
+  "pi": {
+    "extensions": [
+      "./extensions/provider-tool-scope.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  }
+}

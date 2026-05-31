@@ -1,0 +1,21 @@
+title = "pi-provider-tool-scope gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "global allowlist"
+paths = [
+  '''(^|/)node_modules/''',
+  '''(^|/)dist/''',
+  '''(^|/)build/''',
+  '''(^|/)coverage/''',
+  '''(^|/)\.git/''',
+]
+
+[[rules]]
+id = "private-env-file"
+description = "private env files must not be committed"
+regex = '''(?i)(^|/)(\.env|\.env\..+)$'''
+path = '''(?i)(^|/)(\.env|\.env\..+)$'''
+tags = ["env", "secret"]
